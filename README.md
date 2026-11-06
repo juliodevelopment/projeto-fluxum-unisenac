@@ -1,3 +1,9 @@
+# Fluxum - Um novo desenvolvimento, uma nova empresa, um novo universo.
+- Fluxum, uma startup focada em ailiar pequenas empresas que tem dificuldade em entrar no mercado digital. Nossa proposta é oferecer modernidade, agilidade e acima de tudo, facilidade. A empresa que participar do projeto, vai contar com suporte na parte de gestão de finanças, controle de atividades, informações do me, estatísticas de pagamentos e listagem de funcionários, tudo como forma de controle para as informações respectivas do usuário.
+
+
+## PLANEJAMENTO E ESTRUTURA DE DESENVOLVIMENTO
+```
 1. Identificação
   1.1 NOME DO PROJETO: Fluxum
   1.2 MEMBROS: Julio, Yuri, Jenifer, Wesley, Lucas e Kelvin.
@@ -66,3 +72,4 @@ RNF12 - O sistema deve manter disponibilidade mínima de 99% do tempo, excluindo
     5.2.5 cors & express
     5.2.6 DBeaver (aplicativo de visualização do banco de dados)
     5.2.7 nodejs
+```
