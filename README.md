@@ -6,7 +6,7 @@
 ```
 1. Identificação
   1.1 NOME DO PROJETO: Fluxum
-  1.2 MEMBROS: Julio, Yuri, Jenifer, Wesley, Lucas e Kelvin.
+  1.2 MEMBROS: Julio, Yuri e Kelvin.
 
 2. Briefing e Análise
   2.1 OBJETIVO GERAL: Fluxum, uma startup focada em ailiar pequenas empresas que tem dificuldade em entrar no mercado digital. Nossa proposta é oferecer modernidade, agilidade e acima de tudo, facilidade. A empresa que participar do projeto, vai contar com suporte na parte de gestão de finanças, controle de atividades, informações do me, estatísticas de pagamentos e listagem de funcionários, tudo como forma de controle para as informações respectivas do usuário.
