@@ -72,4 +72,5 @@ RNF12 - O sistema deve manter disponibilidade mínima de 99% do tempo, excluindo
     5.2.5 cors & express
     5.2.6 DBeaver (aplicativo de visualização do banco de dados)
     5.2.7 nodejs
+    5.2.8 Electron
 ```
