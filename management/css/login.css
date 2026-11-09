@@ -1,0 +1,63 @@
+body{
+    margin: 0;
+    background: #f3f6fb;
+    color: #233047;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+main{
+    max-width: 980px;
+    padding: 28px;
+}
+
+h1{
+    margin: 4px 0 24px;
+    font-size: 28px;
+}
+
+h2{
+    margin: 0 0 16px;
+}
+
+.subtitulo{
+    color: #526581;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+form, section{
+    background-color: white;
+    border: 1px solid #dfe6ee;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+label{
+    display: block;
+    margin: 12px 0 6px;
+}
+
+input, select, textarea{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #b3dfd0;
+    border-radius: 6px;
+    font: inherit;
+    background: white;
+}
+
+/* TELA DE LOGIN */
+.paginaLogin main{
+    max-width: 460px;
+    padding-top: 70px;
+}
+
+.paginaLogin button{
+    width: 100%;
+}
+
+#mensagemLogin{
+    min-width: 48px;
+    color: #b12323;
+}
