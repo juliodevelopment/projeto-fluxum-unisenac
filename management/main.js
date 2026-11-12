@@ -18,10 +18,10 @@ function abrirTela(pagina) {
 
 function criarJanela() {
     janela = new BrowserWindow({
-        width: 900,
-        height: 720,
-        minWidth: 650,
-        minHeight: 500,
+        width: 500,
+        height: 650,
+        minWidth: 550,
+        minHeight: 650,
         webPreferences: {
             preload: path.join(__dirname, 'preload.js'),
             nodeIntegration: false,
