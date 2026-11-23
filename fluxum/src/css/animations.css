@@ -1,0 +1,7 @@
+button{
+    animation: 2s;
+}
+button:hover{
+    transform: translateY(-1px);
+    cursor: pointer;
+}

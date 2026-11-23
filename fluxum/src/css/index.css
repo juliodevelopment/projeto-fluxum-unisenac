@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap');
+
+*{
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/* TUDO RELACIONADO AO HEADER */
+
+body header{
+    padding: 10px;
+    font-family: "Red Hat Text", sans-serif;
+    display: flex;
+    background-color: #FAF9F7;
+    justify-content: space-between;
+    align-items: center;
+}
+
+body header .logo{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+body header .logo img{
+    width: 60px;
+    height: auto;
+    border-radius: 10px;
+}
+
+body header nav ul{
+    display: flex;
+    gap: 50px;
+}
+body header nav ul li{
+    font-weight: bold;
+    font-size: 13px;
+    list-style: none;
+}
+
+body header nav ul li a{
+    text-decoration: none;
+    color: #717995;
+}
+
+#agendar{
+    padding: 15px 20px;
+    font-weight: bold;
+    background-color: #386458;
+    color: #fff;
+    border-radius: 20px;
+}
+
+
+/* TUDO RELACIONADO AO CORPO DO SITE */
+
+/* TUDO RELACIONADO A SEÇÃO INICIO */
+main #inicio{
+    background-color: #ffede293;
+    display: flex;
+    font-family: "Lato", sans-serif;
+    justify-content: space-around;
+    align-items: center;
+}
+
+main #inicio .informacoesEsquerda{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    gap: 10px;
+}
+main #inicio .informacoesEsquerda h1{
+    font-family: "Red Hat Text", sans-serif;
+}
+main #inicio .informacoesEsquerda .card i{
+    font-size: 6px;
+}
+main #inicio .informacoesEsquerda .card{
+    display: flex;
+    font-size: 14px;
+    width: 300px;
+    background-color: #BDEDDD;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 20px;
+    padding: 6px 20px;
+    border: 1px solid rgb(197, 197, 199);
+}
+
+main #inicio .informacoesEsquerda .botoes{
+    display: flex;
+    gap: 20px;
+}
+
+main #inicio .imagemDireita img{
+    width: 600px;
+    height: auto;
+    padding: 40px;
+}
+
+#consultarPainel{
+    background-color: #BDEDDD;
+    padding: 15px 30px;
+    font-weight: bold;
+    border-radius: 20px;
+}
+
+
+
+/* TUDO RELACIONADO A SEÇÃO PRODUTOS */
+#produtos{
+    font-family: "Red Hat Text", sans-serif;
+}
+#produtos .produtosTextos{
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+}
+#produtos .produtosTextos span{
+    width: 600px;
+}
+
+#produtos .produtosTextos h3{
+    font-size: 25px;
+}
+#produtos .cards{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#produtos .cards .card{
+    display: flex;
+    flex-direction: column;
+    height: 150px;
+    margin: 10px;
+    gap: 5px;
+    width: 620px;
+    padding: 10px;
+    background-color: #F9FAF7;
+    border: 1px solid rgba(0, 0, 0, 0.116);
+}
+
+#produtos .cards .card i{
+    background-color: rgba(102, 102, 102, 0.048);
+    padding: 5px;
+}
+
+#produtos .cards .card h4{
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.678);
+}
+#produtos .cards .card span{
+    color: rgba(0, 0, 0, 0.685);
+}
+
+/* ERP PENSADO */
+#erpInformacoes{
+    font-family: 'Lato', sans-serif;
+    display: flex;
+    justify-content: space-around;
+    background-color: #f3f4f1;
+}
+
+#erpInformacoes .esquerda{
+    padding: 50px 0px;
+    height: 130px;
+    width: 600px;
+}
+
+#erpInformacoes .esquerda nav{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+#erpInformacoes .esquerda nav button{
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    font-weight: bolder;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+    background-color: rgba(106, 106, 216, 0.767);
+}
+#erpInformacoes .direita img{
+    width: 550px;
+    height: auto;
+}
+
+/* Contato Pelotas */
+#contatoPelotas{
+    display: flex;
+    padding: 40px;
+    font-family: "Lato", sans-serif;
+    gap: 40px;
+    background-color: #f9faf7;
+}
+
+#contatoPelotas .esquerda img{
+    border-radius: 10px;
+}
+
+#contatoPelotas .esquerda{
+    outline: 1px solid #000;
+    outline-offset: 6px;
+    border-radius: 10px;
+}
+
+#contatoPelotas .direita{
+    padding: 40px 0px;
+}
+
+#contatoPelotas .direita .princesa{
+    color: #e2b66b;
+    font-weight: bold;
+    font-size: 12px;
+}
+#contatoPelotas .direita h3{
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+#contatoPelotas .direita .textoPelotas, #contatoPelotas .direita span{
+    opacity: 70%;
+}
+
+#contatoPelotas .direita .cards{
+    display: flex;
+    padding: 20px;
+    gap: 120px;
+}
+
+#contatoPelotas .direita .cards .card{
+    width: 180px;
+    border: 1px solid rgba(0, 0, 0, 0.089);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#cinza{
+    background-color: #faf7f2;
+}
+
+#verde{
+    background-color: #d3fae9;
+}
+
+#azul{
+    background-color: #eff0ff;
+}
