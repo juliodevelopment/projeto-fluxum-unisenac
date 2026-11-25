@@ -3,11 +3,8 @@ const usuario = document.getElementById('usuario');
 const senha = document.getElementById('senha');
 const entrar = document.getElementById('entrar');
 const mensagemLogin = document.getElementById('mensagemLogin');
-
-  const inputSenha = document.getElementById('campoSenha');
-  const botao = document.getElementById('btnMostrar');
-
-  botao.addEventListener('click', () => {
+const botao = document.getElementById('btnMostrar');
+botao.addEventListener('click', () => {
     // Verifica o tipo atual e alterna entre 'text' e 'password'
     if (inputSenha.type === 'password') {
       inputSenha.type = 'text';
@@ -16,7 +13,7 @@ const mensagemLogin = document.getElementById('mensagemLogin');
       inputSenha.type = 'password';
       botao.textContent = 'Mostrar';
     }
-  });
+});
 
 formLogin.addEventListener('submit', async evento => {
     evento.preventDefault();
@@ -44,6 +41,8 @@ formLogin.addEventListener('submit', async evento => {
     } catch (error) {
         mensagemLogin.textContent = `Não foi possível entrar. Tente novamente\n${error}`;
         senha.value = '';
+        entrar.disabled = false;
+        
     }
     entrar.disabled = false;
     senha.focus();
