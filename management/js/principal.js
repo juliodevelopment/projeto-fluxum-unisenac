@@ -1,0 +1,1 @@
+document.getElementById('sair').addEventListener('click', () => window.AuthenticatorAssertionResponse.sair());
