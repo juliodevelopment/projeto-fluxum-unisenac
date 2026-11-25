@@ -31,7 +31,13 @@ function caminho(pagina) {
 }
 
 function origemValida(evento, pagina){
-    return Boolean(janela && evento.sender === janela.webContents && evento.senderFrame && evento.senderFrame && evento.senderFrame === janela.webContents.mainFrame && evento.senderFrame.url === pathToFileURL(caminho(pagina)).href);
+    return Boolean(
+        janela &&
+        evento.sender === janela.webContents &&
+        evento.senderFrame &&
+        evento.senderFrame === janela.webContents.mainFrame &&
+        evento.senderFrame.url === pathToFileURL(caminho(pagina)).href
+    );
 }
 
 function abrirTela(pagina) {
@@ -84,6 +90,35 @@ ipcMain.on('auth:sair', evento => {
     }
 });
 
+ipcMain.on('menu:abrir', (evento, destino) => {
+    if(sessao && origemValida(evento, 'principal') && cadastros.includes(destino)){
+        abrirTela(destino);
+    }
+});
+
+ipcMain.on('menu:inicio', evento => {
+    if(sessao && cadastros.some(pagina => origemValida(evento, pagina))){
+        abrirTela('principal');
+    }
+});
+
+
+function registrar(pagina, operacao, acao){
+    ipcMain.handle(pagina + ':' + operacao, async (evento, dados) => {
+        if(!sessao || !origemValida(evento, pagina)){
+            return {ok: false, erro: 'Acesso ao cadastro não autorizado.'};
+        }
+
+        try {
+            return {ok: true, dados: await acao(dados, evento)};
+        } catch (error) {
+            return respostaErro(error, pagina);
+        }
+    });
+}
+
+registrar('alunos', 'listar', db.alunos.listar);
+registrar('alunos', 'criar', db.alunos.criar);
 function criarJanela() {
     janela = new BrowserWindow({
         width: 500,

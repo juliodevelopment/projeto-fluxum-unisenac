@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self'; object-src 'none'; base-uri 'none'">
+    <title>Cadastro de alunos</title>
+    <link rel="stylesheet" href="../css/principal.css">
+    <script src="../js/cadastro.js" defer></script>
+    <script src="../renderer.js" defer></script>
+</head>
+<body>
+    <main>
+        <header>
+            <p class="subtitulo">ELECTRON + MYSQL</p>
+            <h1>Cadastro de alunos</h1>
+            <div class="acoes navegacao">
+                <button id="voltarMenu" type="button" class="secundario">Voltar ao menu</button>
+                <button id="sair" type="button" class="secundario">Sair</button>
+            </div>
+        </header>
+
+        <form id="formulario">
+            <h2 id="tituloFormulario">Novo aluno</h2>
+
+            <label for="nome">Nome</label>
+            <input id="nome" name="nome" type="text" maxlength="100" required>
+
+            <label for="email">E-mail</label>
+            <input id="email" name="email" type="email" maxlength="150" required>
+
+            <label for="telefone">Telefone</label>
+            <input id="telefone" name="telefone" type="text" maxlength="20" autocomplete="tel" required>
+
+            <div class="acoes">
+                <button id="salvar" type="submit">Cadastrar</button>
+                <button id="cancelar" type="button" class="secundario" hidden>Cancelar edição</button>
+            </div>
+        </form>
+
+        <p id="mensagem" role="status" aria-live="polite"></p>
+
+        <section aria-labelledby="tituloLista">
+        <div id="cabecalhoRelatorio">
+            <h2>Relatório de alunos cadastrados</h2>
+            <p id="dataRelatorio"></p>
+        </div>
+
+        <div class="cabecalhoLista">
+            <h2 id="tituloLista">Alunos Cadastrados</h2>
+            <div class="acoesLista">
+                <button id="recarregar" type="button" class="secundario">Atualizar lista</button>
+                <button id="imprimirRelatorio" type="button">Gerar relatório</button>
+            </div>
+        </div>
+
+    <table>
+        <caption id="resumo">Carregando registros...</caption>
+        <thead>
+            <tr>
+                <th scope="col">Código</th>
+                <th scope="col">Nome</th>
+                <th scope="col">E-mail</th>
+                <th scope="col">Telefone</th>
+                <th scope="col">Ações</th>
+            </tr>
+        </thead>
+        <tbody id="lista"></tbody>
+    </table>
+    </section>
+    </main>
+</body>
+</html>

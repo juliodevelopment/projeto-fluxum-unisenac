@@ -4,6 +4,20 @@ const senha = document.getElementById('senha');
 const entrar = document.getElementById('entrar');
 const mensagemLogin = document.getElementById('mensagemLogin');
 
+  const inputSenha = document.getElementById('campoSenha');
+  const botao = document.getElementById('btnMostrar');
+
+  botao.addEventListener('click', () => {
+    // Verifica o tipo atual e alterna entre 'text' e 'password'
+    if (inputSenha.type === 'password') {
+      inputSenha.type = 'text';
+      botao.textContent = 'Ocultar senha';
+    } else {
+      inputSenha.type = 'password';
+      botao.textContent = 'Mostrar';
+    }
+  });
+
 formLogin.addEventListener('submit', async evento => {
     evento.preventDefault();
 

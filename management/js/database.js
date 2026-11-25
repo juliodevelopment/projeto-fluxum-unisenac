@@ -27,6 +27,47 @@ function erroValidacao(mensagem) {
     throw erro;
 }
 
+function validarAluno(dados) {
+    const nome = texto(dados?.nome);
+    const email = texto(dados?.email);
+    const telefone = texto(dados?.telefone);
+
+    if (!nome || nome.length > 100) {
+        erroValidacao('Informe um nome de até 100 caracteres.');
+    }
+
+    if (
+        email.length > 150 ||
+        !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+    ) {
+        erroValidacao('Informe um e-mail válido de até 150 caracteres.');
+    }
+
+    if (!telefone || telefone.length > 20) {
+        erroValidacao('Informe um telefone de até 20 caracteres.');
+    }
+
+    return [nome, email, telefone];
+}
+
+function validarId(id) {
+    const numero = Number(id);
+
+    if (!Number.isSafeInteger(numero) || numero <= 0) {
+        erroValidacao('Código do registro inválido.');
+    }
+
+    return numero;
+}
+
+function confirmarRegistro(resultado, id, mensagem) {
+    if (resultado.affectedRows === 0) {
+        erroValidacao(mensagem);
+    }
+
+    return { id };
+}
+
 // Autenticação
 async function autenticar(dados) {
     const usuario = texto(dados?.usuario);
@@ -67,7 +108,56 @@ async function fechar() {
     await pool.end();
 }
 
+const alunos = {
+    async listar() {
+        const [linhas] = await pool.execute(
+            'SELECT id, nome, email, telefone FROM alunos ORDER BY id DESC'
+        );
+
+        return linhas;
+    },
+
+    async criar(dados) {
+        const [resultado] = await pool.execute(
+            'INSERT INTO alunos (nome, email, telefone) VALUES (?, ?, ?)',
+            validarAluno(dados)
+        );
+
+        return { id: resultado.insertId };
+    },
+
+    async atualizar(dados) {
+        const id = validarId(dados?.id);
+
+        const [resultado] = await pool.execute(
+            'UPDATE alunos SET nome = ?, email = ?, telefone = ? WHERE id = ?',
+            [...validarAluno(dados), id]
+        );
+
+        return confirmarRegistro(
+            resultado,
+            id,
+            'Aluno não encontrado. Atualize a lista.'
+        );
+    },
+
+    async excluir(id) {
+        const codigo = validarId(id);
+
+        const [resultado] = await pool.execute(
+            'DELETE FROM alunos WHERE id = ?',
+            [codigo]
+        );
+
+        return confirmarRegistro(
+            resultado,
+            codigo,
+            'Aluno não encontrado. Atualize a lista.'
+        );
+    }
+};
 module.exports = {
     autenticar,
-    fechar
+    alunos,
+    fechar: () => pool.end()
 };
